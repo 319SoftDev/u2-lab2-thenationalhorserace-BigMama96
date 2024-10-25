@@ -28,6 +28,8 @@ const brownButton = document.querySelector("#brown-button");
 // Div to display the winner message
 const winnerDiv = document.querySelector("#winner"); 
 
+// Reset button selector
+const resetButton = document.querySelector("#reset-button");  
 
 //:)
 
@@ -69,6 +71,26 @@ const checkWinner = (position, color) => {
   }
 };
 
+//:)
+
+// Reset function
+const resetRace = () => {
+  blue_position = 1;
+  pink_position = 1;
+  brown_position = 1;
+
+  changePosition(blueHorse, blue_position);
+  changePosition(pinkHorse, pink_position);
+  changePosition(brownHorse, brown_position);
+
+  winnerDiv.innerHTML = '';  // Clear the winner message
+
+  // Re-enable buttons
+  blueButton.disabled = false;
+  pinkButton.disabled = false;
+  brownButton.disabled = false;
+};
+
 
 //:)
 
@@ -79,3 +101,24 @@ blueButton.addEventListener("click", advanceBlue);
 pinkButton.addEventListener("click", advancePink); 
  // Attach click event to brown button
 brownButton.addEventListener("click", advanceBrown);
+//Attach click event to reset button
+resetButton.addEventListener("click", resetRace);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
